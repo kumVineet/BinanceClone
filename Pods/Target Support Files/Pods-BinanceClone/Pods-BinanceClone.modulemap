@@ -1,0 +1,6 @@
+framework module Pods_BinanceClone {
+  umbrella header "Pods-BinanceClone-umbrella.h"
+
+  export *
+  module * { export * }
+}

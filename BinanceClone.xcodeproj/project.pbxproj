@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2EADC5CF27C4B714003F11A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC5CE27C4B714003F11A5 /* AppDelegate.swift */; };
+		2EADC5D127C4B714003F11A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC5D027C4B714003F11A5 /* SceneDelegate.swift */; };
+		2EADC5D627C4B714003F11A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EADC5D427C4B714003F11A5 /* Main.storyboard */; };
+		2EADC5D927C4B714003F11A5 /* BinanceClone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC5D727C4B714003F11A5 /* BinanceClone.xcdatamodeld */; };
+		2EADC5DB27C4B715003F11A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EADC5DA27C4B715003F11A5 /* Assets.xcassets */; };
+		2EADC5DE27C4B715003F11A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EADC5DC27C4B715003F11A5 /* LaunchScreen.storyboard */; };
+		2EADC5EB27C4BB05003F11A5 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC5EA27C4BB05003F11A5 /* MarketViewController.swift */; };
+		2EADC5ED27C4BB20003F11A5 /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC5EC27C4BB20003F11A5 /* TradeViewController.swift */; };
+		2EADC5F027C4BB4A003F11A5 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC5EF27C4BB4A003F11A5 /* AccountViewController.swift */; };
+		2EADC5F227C4BB79003F11A5 /* FundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC5F127C4BB79003F11A5 /* FundViewController.swift */; };
+		2EADC5F727C4BC4A003F11A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC5F627C4BC4A003F11A5 /* LoginViewController.swift */; };
+		2EADC5F927C4BC5D003F11A5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC5F827C4BC5D003F11A5 /* RegisterViewController.swift */; };
+		2EADC5FD27C4BDF4003F11A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC5FC27C4BDF4003F11A5 /* SettingsViewController.swift */; };
+		2EADC5FF27C4C94D003F11A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EADC5FE27C4C94D003F11A5 /* GoogleService-Info.plist */; };
+		2EADC60127C502BD003F11A5 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC60027C502BD003F11A5 /* ForgotPasswordViewController.swift */; };
+		2EADC60527C602D1003F11A5 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC60427C602D1003F11A5 /* DatabaseManager.swift */; };
+		2EADC60727C6041F003F11A5 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC60627C6041F003F11A5 /* AuthManager.swift */; };
+		2EADC60927C604AC003F11A5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC60827C604AC003F11A5 /* StorageManager.swift */; };
+		2EADC60B27C624FE003F11A5 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC60A27C624FE003F11A5 /* Extension.swift */; };
+		2EADC61A27C7DD64003F11A5 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC61927C7DD64003F11A5 /* AccountTableViewCell.swift */; };
+		2EADC61D27C8AB28003F11A5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC61C27C8AB28003F11A5 /* SearchViewController.swift */; };
+		2EADC61F27C8ADC0003F11A5 /* MarketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADC61E27C8ADC0003F11A5 /* MarketTableViewCell.swift */; };
+		2EC625B827CF70630044E9F1 /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC625B727CF70630044E9F1 /* CoinManager.swift */; };
+		2EC625BA27CFB17D0044E9F1 /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC625B927CFB17D0044E9F1 /* CoinData.swift */; };
+		2ED5C53E27F450FF000A9B74 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5C53D27F450FF000A9B74 /* SellViewController.swift */; };
+		2EE6148F27DF28AF00A93985 /* TopSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6148E27DF28AE00A93985 /* TopSearchTableViewCell.swift */; };
+		2EE6149127E113C500A93985 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6149027E113C500A93985 /* BuyViewController.swift */; };
+		2EE6149327E1D9C800A93985 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6149227E1D9C800A93985 /* CoinModel.swift */; };
+		BE720B0193DAD4BFB4A25AC4 /* Pods_BinanceClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BC06A8DAAA66692B560FB4 /* Pods_BinanceClone.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2EADC5CB27C4B714003F11A5 /* BinanceClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BinanceClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EADC5CE27C4B714003F11A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2EADC5D027C4B714003F11A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2EADC5D527C4B714003F11A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2EADC5D827C4B714003F11A5 /* BinanceClone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BinanceClone.xcdatamodel; sourceTree = "<group>"; };
+		2EADC5DA27C4B715003F11A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2EADC5DD27C4B715003F11A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2EADC5DF27C4B715003F11A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EADC5EA27C4BB05003F11A5 /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
+		2EADC5EC27C4BB20003F11A5 /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
+		2EADC5EF27C4BB4A003F11A5 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		2EADC5F127C4BB79003F11A5 /* FundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundViewController.swift; sourceTree = "<group>"; };
+		2EADC5F627C4BC4A003F11A5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2EADC5F827C4BC5D003F11A5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		2EADC5FC27C4BDF4003F11A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2EADC5FE27C4C94D003F11A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2EADC60027C502BD003F11A5 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		2EADC60427C602D1003F11A5 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		2EADC60627C6041F003F11A5 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		2EADC60827C604AC003F11A5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		2EADC60A27C624FE003F11A5 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		2EADC61927C7DD64003F11A5 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		2EADC61C27C8AB28003F11A5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2EADC61E27C8ADC0003F11A5 /* MarketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableViewCell.swift; sourceTree = "<group>"; };
+		2EC625B727CF70630044E9F1 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
+		2EC625B927CFB17D0044E9F1 /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
+		2ED5C53D27F450FF000A9B74 /* SellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
+		2EE6148E27DF28AE00A93985 /* TopSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchTableViewCell.swift; sourceTree = "<group>"; };
+		2EE6149027E113C500A93985 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
+		2EE6149227E1D9C800A93985 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		3FC0DEFD99A66B3EA332A68A /* Pods-BinanceClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BinanceClone.release.xcconfig"; path = "Target Support Files/Pods-BinanceClone/Pods-BinanceClone.release.xcconfig"; sourceTree = "<group>"; };
+		A004FF43F46013AABECCC712 /* Pods-BinanceClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BinanceClone.debug.xcconfig"; path = "Target Support Files/Pods-BinanceClone/Pods-BinanceClone.debug.xcconfig"; sourceTree = "<group>"; };
+		F3BC06A8DAAA66692B560FB4 /* Pods_BinanceClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BinanceClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2EADC5C827C4B714003F11A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE720B0193DAD4BFB4A25AC4 /* Pods_BinanceClone.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B12201B58940FBA276949BB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A004FF43F46013AABECCC712 /* Pods-BinanceClone.debug.xcconfig */,
+				3FC0DEFD99A66B3EA332A68A /* Pods-BinanceClone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2EADC5C227C4B714003F11A5 = {
+			isa = PBXGroup;
+			children = (
+				2EADC5CD27C4B714003F11A5 /* BinanceClone */,
+				2EADC5CC27C4B714003F11A5 /* Products */,
+				1B12201B58940FBA276949BB /* Pods */,
+				A84F0DC5289359838F9DE796 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2EADC5CC27C4B714003F11A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2EADC5CB27C4B714003F11A5 /* BinanceClone.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2EADC5CD27C4B714003F11A5 /* BinanceClone */ = {
+			isa = PBXGroup;
+			children = (
+				2EADC5E827C4B762003F11A5 /* Resources */,
+				2EADC5E527C4B734003F11A5 /* Model */,
+				2EADC5E627C4B73E003F11A5 /* View */,
+				2EADC5E727C4B748003F11A5 /* Controller */,
+				2EADC5DF27C4B715003F11A5 /* Info.plist */,
+				2EADC5D727C4B714003F11A5 /* BinanceClone.xcdatamodeld */,
+			);
+			path = BinanceClone;
+			sourceTree = "<group>";
+		};
+		2EADC5E527C4B734003F11A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EC625B727CF70630044E9F1 /* CoinManager.swift */,
+				2EC625B927CFB17D0044E9F1 /* CoinData.swift */,
+				2EE6149227E1D9C800A93985 /* CoinModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2EADC5E627C4B73E003F11A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2EADC5DA27C4B715003F11A5 /* Assets.xcassets */,
+				2EADC5E927C4B795003F11A5 /* Storyboards */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2EADC5E727C4B748003F11A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2EADC5F427C4BC1B003F11A5 /* Other */,
+				2EADC5F327C4BBCD003F11A5 /* Core Tabs */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2EADC5E827C4B762003F11A5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2EADC5FE27C4C94D003F11A5 /* GoogleService-Info.plist */,
+				2EADC5CE27C4B714003F11A5 /* AppDelegate.swift */,
+				2EADC5D027C4B714003F11A5 /* SceneDelegate.swift */,
+				2EADC60427C602D1003F11A5 /* DatabaseManager.swift */,
+				2EADC60627C6041F003F11A5 /* AuthManager.swift */,
+				2EADC60827C604AC003F11A5 /* StorageManager.swift */,
+				2EADC60A27C624FE003F11A5 /* Extension.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2EADC5E927C4B795003F11A5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2EADC5D427C4B714003F11A5 /* Main.storyboard */,
+				2EADC5DC27C4B715003F11A5 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2EADC5F327C4BBCD003F11A5 /* Core Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				2EADC5EA27C4BB05003F11A5 /* MarketViewController.swift */,
+				2EADC5EC27C4BB20003F11A5 /* TradeViewController.swift */,
+				2EADC5F127C4BB79003F11A5 /* FundViewController.swift */,
+				2EADC5EF27C4BB4A003F11A5 /* AccountViewController.swift */,
+			);
+			path = "Core Tabs";
+			sourceTree = "<group>";
+		};
+		2EADC5F427C4BC1B003F11A5 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				2EE6149027E113C500A93985 /* BuyViewController.swift */,
+				2ED5C53D27F450FF000A9B74 /* SellViewController.swift */,
+				2EADC5FC27C4BDF4003F11A5 /* SettingsViewController.swift */,
+				2EADC61C27C8AB28003F11A5 /* SearchViewController.swift */,
+				2EADC5F527C4BC2D003F11A5 /* Onboarding */,
+				2EADC61B27C8A7C2003F11A5 /* TableViewCells */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		2EADC5F527C4BC2D003F11A5 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				2EADC5F627C4BC4A003F11A5 /* LoginViewController.swift */,
+				2EADC5F827C4BC5D003F11A5 /* RegisterViewController.swift */,
+				2EADC60027C502BD003F11A5 /* ForgotPasswordViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		2EADC61B27C8A7C2003F11A5 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				2EADC61927C7DD64003F11A5 /* AccountTableViewCell.swift */,
+				2EADC61E27C8ADC0003F11A5 /* MarketTableViewCell.swift */,
+				2EE6148E27DF28AE00A93985 /* TopSearchTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		A84F0DC5289359838F9DE796 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3BC06A8DAAA66692B560FB4 /* Pods_BinanceClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2EADC5CA27C4B714003F11A5 /* BinanceClone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EADC5E227C4B715003F11A5 /* Build configuration list for PBXNativeTarget "BinanceClone" */;
+			buildPhases = (
+				56162F151F0483DF6F4EEFE7 /* [CP] Check Pods Manifest.lock */,
+				2EADC5C727C4B714003F11A5 /* Sources */,
+				2EADC5C827C4B714003F11A5 /* Frameworks */,
+				2EADC5C927C4B714003F11A5 /* Resources */,
+				626BB2D24A2EC44DBA891A17 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BinanceClone;
+			packageProductDependencies = (
+			);
+			productName = BinanceClone;
+			productReference = 2EADC5CB27C4B714003F11A5 /* BinanceClone.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2EADC5C327C4B714003F11A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					2EADC5CA27C4B714003F11A5 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = 2EADC5C627C4B714003F11A5 /* Build configuration list for PBXProject "BinanceClone" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2EADC5C227C4B714003F11A5;
+			packageReferences = (
+			);
+			productRefGroup = 2EADC5CC27C4B714003F11A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2EADC5CA27C4B714003F11A5 /* BinanceClone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2EADC5C927C4B714003F11A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EADC5DE27C4B715003F11A5 /* LaunchScreen.storyboard in Resources */,
+				2EADC5FF27C4C94D003F11A5 /* GoogleService-Info.plist in Resources */,
+				2EADC5DB27C4B715003F11A5 /* Assets.xcassets in Resources */,
+				2EADC5D627C4B714003F11A5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56162F151F0483DF6F4EEFE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BinanceClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		626BB2D24A2EC44DBA891A17 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BinanceClone/Pods-BinanceClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BinanceClone/Pods-BinanceClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BinanceClone/Pods-BinanceClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2EADC5C727C4B714003F11A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EADC5F727C4BC4A003F11A5 /* LoginViewController.swift in Sources */,
+				2EADC60727C6041F003F11A5 /* AuthManager.swift in Sources */,
+				2ED5C53E27F450FF000A9B74 /* SellViewController.swift in Sources */,
+				2EADC5F927C4BC5D003F11A5 /* RegisterViewController.swift in Sources */,
+				2EE6149127E113C500A93985 /* BuyViewController.swift in Sources */,
+				2EADC61D27C8AB28003F11A5 /* SearchViewController.swift in Sources */,
+				2EADC60527C602D1003F11A5 /* DatabaseManager.swift in Sources */,
+				2EADC5CF27C4B714003F11A5 /* AppDelegate.swift in Sources */,
+				2EADC61A27C7DD64003F11A5 /* AccountTableViewCell.swift in Sources */,
+				2EE6148F27DF28AF00A93985 /* TopSearchTableViewCell.swift in Sources */,
+				2EADC5F027C4BB4A003F11A5 /* AccountViewController.swift in Sources */,
+				2EE6149327E1D9C800A93985 /* CoinModel.swift in Sources */,
+				2EADC60B27C624FE003F11A5 /* Extension.swift in Sources */,
+				2EADC5EB27C4BB05003F11A5 /* MarketViewController.swift in Sources */,
+				2EADC5ED27C4BB20003F11A5 /* TradeViewController.swift in Sources */,
+				2EADC5D927C4B714003F11A5 /* BinanceClone.xcdatamodeld in Sources */,
+				2EC625BA27CFB17D0044E9F1 /* CoinData.swift in Sources */,
+				2EADC60127C502BD003F11A5 /* ForgotPasswordViewController.swift in Sources */,
+				2EADC5D127C4B714003F11A5 /* SceneDelegate.swift in Sources */,
+				2EADC60927C604AC003F11A5 /* StorageManager.swift in Sources */,
+				2EADC5F227C4BB79003F11A5 /* FundViewController.swift in Sources */,
+				2EADC5FD27C4BDF4003F11A5 /* SettingsViewController.swift in Sources */,
+				2EC625B827CF70630044E9F1 /* CoinManager.swift in Sources */,
+				2EADC61F27C8ADC0003F11A5 /* MarketTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2EADC5D427C4B714003F11A5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2EADC5D527C4B714003F11A5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2EADC5DC27C4B715003F11A5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2EADC5DD27C4B715003F11A5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2EADC5E027C4B715003F11A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2EADC5E127C4B715003F11A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2EADC5E327C4B715003F11A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A004FF43F46013AABECCC712 /* Pods-BinanceClone.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BinanceClone/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Binance;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vineet.BinanceClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2EADC5E427C4B715003F11A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FC0DEFD99A66B3EA332A68A /* Pods-BinanceClone.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BinanceClone/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Binance;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vineet.BinanceClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2EADC5C627C4B714003F11A5 /* Build configuration list for PBXProject "BinanceClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EADC5E027C4B715003F11A5 /* Debug */,
+				2EADC5E127C4B715003F11A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EADC5E227C4B715003F11A5 /* Build configuration list for PBXNativeTarget "BinanceClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EADC5E327C4B715003F11A5 /* Debug */,
+				2EADC5E427C4B715003F11A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2EADC5D727C4B714003F11A5 /* BinanceClone.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2EADC5D827C4B714003F11A5 /* BinanceClone.xcdatamodel */,
+			);
+			currentVersion = 2EADC5D827C4B714003F11A5 /* BinanceClone.xcdatamodel */;
+			path = BinanceClone.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2EADC5C327C4B714003F11A5 /* Project object */;
+}
