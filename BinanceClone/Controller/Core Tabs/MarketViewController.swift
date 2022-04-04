@@ -72,6 +72,16 @@ class MarketViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let detail = segue.destination as! CryptoDetailsViewController
+        let selectedRow = marketTableView.indexPathForSelectedRow!.row
+        
+        detail.assetName = viewModels[selectedRow].name
+        detail.iconData = viewModels[selectedRow].iconData
+        detail.price = viewModels[selectedRow].price
+    }
+    
     @IBAction func onlyCrypto(_ sender: UIButton) {
         
         
@@ -104,6 +114,11 @@ extension MarketViewController: UITableViewDelegate, UITableViewDataSource {
         self.removeSpinner()
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.performSegue(withIdentifier: "cryptoDetail", sender: self)
     }
 }
 

@@ -29,6 +29,20 @@ struct CurrencyPrice : Codable {
     let asset_id_base : String
 }
 
+struct GetNewsResponse: Codable {
+    let results: [Article]
+}
+
+struct Article : Codable {
+    let source_id : String
+    let title: String
+    let description: String?
+    let link : String?
+    let image_url  : String?
+}
+
+
+
 //struct CoinData {
 //
 //    struct Crypto: Codable {

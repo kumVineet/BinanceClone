@@ -34,6 +34,14 @@ struct CoinModel {
                 return String(format: "%.3f", rate)
             }
     }
+    
+    struct NewsModel {
+        
+        let title: String
+        let subtitle: String
+        let imageURL: URL?
+        var imageData: Data? = nil
+    }
 }
 
 

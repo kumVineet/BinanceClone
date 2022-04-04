@@ -21,8 +21,10 @@ class CoinAPI {
     struct Constants {
         
         static let coinApiURL = "https://rest.coinapi.io/v1/"
-//        static let apiKey     = "3E12DAAE-C2F9-4E2D-83A2-21A645A44DC9"
-        static let apiKey     = "9C500994-DBDB-4EF8-8168-7285BC29765F"
+        static let apiKey     = "3E12DAAE-C2F9-4E2D-83A2-21A645A44DC9"
+//        static let apiKey     = "9C500994-DBDB-4EF8-8168-7285BC29765F"
+        
+        static let newsURLString =  "https://newsdata.io/api/1/news?apikey=pub_601382047d277130103cfbd9b884b40c9104&language=en&q="
     }
     
 
@@ -157,6 +159,32 @@ class CoinAPI {
              }
              task.resume()
     }
+    
+    
+    public func getNews(with assetID: String, completion: @escaping (Result<[Article], Error>) -> Void ) {
+        
+        guard let url = URL(string: Constants.newsURLString + assetID) else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            else if let data = data {
+                do {
+                    let article = try JSONDecoder().decode(GetNewsResponse.self, from: data)
+                    print("Articles: \(article.results.count)")
+                    completion(.success(article.results))
+                }
+                catch {
+                    completion(.failure(error))
+                }
+            }
+        }
+        task.resume()
+    }
+    
 }
 
 
