@@ -32,6 +32,8 @@
 		2EC625B827CF70630044E9F1 /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC625B727CF70630044E9F1 /* CoinManager.swift */; };
 		2EC625BA27CFB17D0044E9F1 /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC625B927CFB17D0044E9F1 /* CoinData.swift */; };
 		2ED5C53E27F450FF000A9B74 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5C53D27F450FF000A9B74 /* SellViewController.swift */; };
+		2ED5C54027FADBFC000A9B74 /* CryptoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5C53F27FADBFC000A9B74 /* CryptoDetailsViewController.swift */; };
+		2ED5C54227FAF2A9000A9B74 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5C54127FAF2A9000A9B74 /* NewsTableViewCell.swift */; };
 		2EE6148F27DF28AF00A93985 /* TopSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6148E27DF28AE00A93985 /* TopSearchTableViewCell.swift */; };
 		2EE6149127E113C500A93985 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6149027E113C500A93985 /* BuyViewController.swift */; };
 		2EE6149327E1D9C800A93985 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6149227E1D9C800A93985 /* CoinModel.swift */; };
@@ -66,6 +68,8 @@
 		2EC625B727CF70630044E9F1 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
 		2EC625B927CFB17D0044E9F1 /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
 		2ED5C53D27F450FF000A9B74 /* SellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
+		2ED5C53F27FADBFC000A9B74 /* CryptoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailsViewController.swift; sourceTree = "<group>"; };
+		2ED5C54127FAF2A9000A9B74 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		2EE6148E27DF28AE00A93985 /* TopSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchTableViewCell.swift; sourceTree = "<group>"; };
 		2EE6149027E113C500A93985 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
 		2EE6149227E1D9C800A93985 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 		2EADC5F427C4BC1B003F11A5 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				2ED5C53F27FADBFC000A9B74 /* CryptoDetailsViewController.swift */,
 				2EE6149027E113C500A93985 /* BuyViewController.swift */,
 				2ED5C53D27F450FF000A9B74 /* SellViewController.swift */,
 				2EADC5FC27C4BDF4003F11A5 /* SettingsViewController.swift */,
@@ -217,6 +222,7 @@
 				2EADC61927C7DD64003F11A5 /* AccountTableViewCell.swift */,
 				2EADC61E27C8ADC0003F11A5 /* MarketTableViewCell.swift */,
 				2EE6148E27DF28AE00A93985 /* TopSearchTableViewCell.swift */,
+				2ED5C54127FAF2A9000A9B74 /* NewsTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -353,6 +359,7 @@
 				2EADC60727C6041F003F11A5 /* AuthManager.swift in Sources */,
 				2ED5C53E27F450FF000A9B74 /* SellViewController.swift in Sources */,
 				2EADC5F927C4BC5D003F11A5 /* RegisterViewController.swift in Sources */,
+				2ED5C54227FAF2A9000A9B74 /* NewsTableViewCell.swift in Sources */,
 				2EE6149127E113C500A93985 /* BuyViewController.swift in Sources */,
 				2EADC61D27C8AB28003F11A5 /* SearchViewController.swift in Sources */,
 				2EADC60527C602D1003F11A5 /* DatabaseManager.swift in Sources */,
@@ -366,6 +373,7 @@
 				2EADC5ED27C4BB20003F11A5 /* TradeViewController.swift in Sources */,
 				2EADC5D927C4B714003F11A5 /* BinanceClone.xcdatamodeld in Sources */,
 				2EC625BA27CFB17D0044E9F1 /* CoinData.swift in Sources */,
+				2ED5C54027FADBFC000A9B74 /* CryptoDetailsViewController.swift in Sources */,
 				2EADC60127C502BD003F11A5 /* ForgotPasswordViewController.swift in Sources */,
 				2EADC5D127C4B714003F11A5 /* SceneDelegate.swift in Sources */,
 				2EADC60927C604AC003F11A5 /* StorageManager.swift in Sources */,

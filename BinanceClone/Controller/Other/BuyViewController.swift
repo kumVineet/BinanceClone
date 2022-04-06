@@ -29,6 +29,7 @@ class BuyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         viewOfImage.backgroundColor = .yellow
         viewOfImage.layer.masksToBounds = true
         viewOfImage.layer.cornerRadius = viewOfImage.bounds.width / 2

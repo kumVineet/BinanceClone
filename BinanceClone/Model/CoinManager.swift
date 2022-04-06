@@ -21,8 +21,10 @@ class CoinAPI {
     struct Constants {
         
         static let coinApiURL = "https://rest.coinapi.io/v1/"
-//        static let apiKey     = "3E12DAAE-C2F9-4E2D-83A2-21A645A44DC9"
-        static let apiKey     = "9C500994-DBDB-4EF8-8168-7285BC29765F"
+        static let apiKey     = "3E12DAAE-C2F9-4E2D-83A2-21A645A44DC9"
+//        static let apiKey     = "9C500994-DBDB-4EF8-8168-7285BC29765F"
+        
+        static let newsURLString =  "https://newsdata.io/api/1/news?apikey=pub_601382047d277130103cfbd9b884b40c9104&language=en&q="
     }
     
 
@@ -157,6 +159,56 @@ class CoinAPI {
              }
              task.resume()
     }
+    
+    
+    public func getNews(with assetID: String, completion: @escaping (Result<[Article], Error>) -> Void ) {
+        
+        guard let url = URL(string: Constants.newsURLString + assetID) else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            else if let data = data {
+                do {
+                    let article = try JSONDecoder().decode(GetNewsResponse.self, from: data)
+                    print("Articles: \(article.results.count)")
+                    completion(.success(article.results))
+                }
+                catch {
+                    completion(.failure(error))
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    public func getChartPoints(completion: @escaping (Result<[Price], Error>) -> Void) {
+        
+        guard let url = URL(string: "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=usd&from=1649057600&to=1649144000") else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            else if let data = data {
+                do {
+                    let assetPoints = try JSONDecoder().decode(ChartPoints.self, from: data)
+//                    print("ChartPoints: \(assetPoints.prices)")
+                    completion(.success(assetPoints.prices))
+                }
+                catch {
+                    completion(.failure(error))
+                }
+            }
+        }
+        task.resume()
+    }
+    
 }
 
 
