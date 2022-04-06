@@ -70,6 +70,7 @@ class MarketViewController: UIViewController {
                 print(error)
             }
         }
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

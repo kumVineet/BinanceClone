@@ -42,6 +42,11 @@ struct CoinModel {
         let imageURL: URL?
         var imageData: Data? = nil
     }
+    
+    struct ChartPoints {
+        let time: Double
+        let high: Double
+    }
 }
 
 

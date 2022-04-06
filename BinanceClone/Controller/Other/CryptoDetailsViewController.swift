@@ -11,11 +11,11 @@ import SafariServices
 class CryptoDetailsViewController: UIViewController {
 
     private var viewModels = [CoinModel.NewsModel]()
+    private var chartModels = [CoinModel.ChartPoints]()
     private var articles = [Article]()
     
     @IBOutlet weak var newsTableView: UITableView!
     @IBOutlet weak var assetPriceLabel: UILabel!
-    @IBOutlet weak var graphImage: UIImageView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -32,14 +32,31 @@ class CryptoDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         assetPriceLabel.text = price
-        graphImage.image = UIImage(data: iconData! )
         fetchNews()
+        fetchChartPoints()
     }
     
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    private func fetchChartPoints() {
+        
+        CoinAPI.shared.getChartPoints { [weak self] result in
+            
+            switch result {
+            case .success(let models):
+                
+                self?.chartModels = models.compactMap({ points in
+                    print("==>>",points.high, points.time)
+                     return CoinModel.ChartPoints(time: points.time, high: points.high)
+                })
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
     
     private func fetchNews() {
         CoinAPI.shared.getNews(with: assetName) { [weak self] result in
