@@ -185,9 +185,9 @@ class CoinAPI {
         task.resume()
     }
     
-    public func getChartPoints(completion: @escaping (Result<[Price], Error>) -> Void) {
-        
-        guard let url = URL(string: "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=usd&from=1649057600&to=1649144000") else {
+    public func getChartPoints(with assetId: String, timeframe: Int, completion: @escaping (Result<[Price], Error>) -> Void) {
+       
+        guard let url = URL(string: "https://api.coingecko.com/api/v3/coins/\(assetId)/market_chart?vs_currency=usd&days=\(timeframe)") else {
             return
         }
         
@@ -198,7 +198,6 @@ class CoinAPI {
             else if let data = data {
                 do {
                     let assetPoints = try JSONDecoder().decode(ChartPoints.self, from: data)
-//                    print("ChartPoints: \(assetPoints.prices)")
                     completion(.success(assetPoints.prices))
                 }
                 catch {

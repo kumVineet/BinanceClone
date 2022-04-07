@@ -34,6 +34,7 @@
 		2ED5C53E27F450FF000A9B74 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5C53D27F450FF000A9B74 /* SellViewController.swift */; };
 		2ED5C54027FADBFC000A9B74 /* CryptoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5C53F27FADBFC000A9B74 /* CryptoDetailsViewController.swift */; };
 		2ED5C54227FAF2A9000A9B74 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5C54127FAF2A9000A9B74 /* NewsTableViewCell.swift */; };
+		2ED5C54A27FD8194000A9B74 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2ED5C54927FD8194000A9B74 /* Charts */; };
 		2EE6148F27DF28AF00A93985 /* TopSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6148E27DF28AE00A93985 /* TopSearchTableViewCell.swift */; };
 		2EE6149127E113C500A93985 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6149027E113C500A93985 /* BuyViewController.swift */; };
 		2EE6149327E1D9C800A93985 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6149227E1D9C800A93985 /* CoinModel.swift */; };
@@ -84,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE720B0193DAD4BFB4A25AC4 /* Pods_BinanceClone.framework in Frameworks */,
+				2ED5C54A27FD8194000A9B74 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +256,7 @@
 			);
 			name = BinanceClone;
 			packageProductDependencies = (
+				2ED5C54927FD8194000A9B74 /* Charts */,
 			);
 			productName = BinanceClone;
 			productReference = 2EADC5CB27C4B714003F11A5 /* BinanceClone.app */;
@@ -284,6 +287,7 @@
 			);
 			mainGroup = 2EADC5C227C4B714003F11A5;
 			packageReferences = (
+				2ED5C54827FD8194000A9B74 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 2EADC5CC27C4B714003F11A5 /* Products */;
 			projectDirPath = "";
@@ -604,6 +608,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2ED5C54827FD8194000A9B74 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2ED5C54927FD8194000A9B74 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2ED5C54827FD8194000A9B74 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2EADC5D727C4B714003F11A5 /* BinanceClone.xcdatamodeld */ = {

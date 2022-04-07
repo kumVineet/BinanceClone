@@ -2477,7 +2477,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 3,280.65" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdq-wu-O4U">
-                                                        <rect key="frame" x="16" y="16" width="147.33333333333334" height="45"/>
+                                                        <rect key="frame" x="16" y="16" width="160" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="WwF-He-9BP"/>
                                                         </constraints>
@@ -2494,7 +2494,7 @@
                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byi-Km-UtG">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byi-Km-UtG" customClass="LineChartView" customModule="Charts">
                                                         <rect key="frame" x="0.0" y="89" width="390" height="370"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
@@ -2507,7 +2507,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="1H"/>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAv-5w-ib3">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAv-5w-ib3">
                                                         <rect key="frame" x="89" y="467" width="50" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="M37-uw-vig"/>
@@ -2515,8 +2515,11 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="1D"/>
+                                                        <connections>
+                                                            <action selector="daysChange:" destination="0d2-DO-4Kw" eventType="touchUpInside" id="yYx-c3-FZe"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ze-C1-3vr">
+                                                    <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ze-C1-3vr">
                                                         <rect key="frame" x="251" y="467" width="50" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="qu2-fr-Ue2"/>
@@ -2524,8 +2527,11 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="1M"/>
+                                                        <connections>
+                                                            <action selector="daysChange:" destination="0d2-DO-4Kw" eventType="touchUpInside" id="kO7-ct-XJ8"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kk6-DD-OSf">
+                                                    <button opaque="NO" tag="365" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kk6-DD-OSf">
                                                         <rect key="frame" x="332" y="467" width="50" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="lHN-nW-s9G"/>
@@ -2533,8 +2539,11 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="1Y"/>
+                                                        <connections>
+                                                            <action selector="daysChange:" destination="0d2-DO-4Kw" eventType="touchUpInside" id="6Uc-GW-Ghh"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv8-NY-V3x">
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv8-NY-V3x">
                                                         <rect key="frame" x="170" y="467" width="50" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="RuB-LX-DAS"/>
@@ -2542,6 +2551,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="1W"/>
+                                                        <connections>
+                                                            <action selector="daysChange:" destination="0d2-DO-4Kw" eventType="touchUpInside" id="tEC-Do-BR5"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <viewLayoutGuide key="safeArea" id="tFJ-6W-k6J"/>
@@ -2559,8 +2571,8 @@
                                                     <constraint firstItem="rvw-C1-vLw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CG9-2n-wh4" secondAttribute="leading" id="WWL-b2-tAP"/>
                                                     <constraint firstAttribute="bottom" secondItem="rvw-C1-vLw" secondAttribute="bottom" constant="8" id="XN6-Uf-cJN"/>
                                                     <constraint firstAttribute="bottom" secondItem="Fv8-NY-V3x" secondAttribute="bottom" constant="8" id="c6P-cy-JoE"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Qdq-wu-O4U" secondAttribute="trailing" constant="226.66666666666666" id="eqL-Y7-UGa"/>
-                                                    <constraint firstItem="Qdq-wu-O4U" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CG9-2n-wh4" secondAttribute="leading" id="f1l-DY-h82"/>
+                                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Qdq-wu-O4U" secondAttribute="trailing" constant="214" id="eqL-Y7-UGa"/>
+                                                    <constraint firstItem="Qdq-wu-O4U" firstAttribute="leading" secondItem="CG9-2n-wh4" secondAttribute="leading" constant="16" id="f1l-DY-h82"/>
                                                     <constraint firstItem="Byi-Km-UtG" firstAttribute="top" secondItem="b6I-ED-9xt" secondAttribute="bottom" constant="8" id="jUT-WD-ZeQ"/>
                                                     <constraint firstAttribute="trailing" secondItem="Kk6-DD-OSf" secondAttribute="trailing" constant="8" id="kRM-It-xdG"/>
                                                     <constraint firstAttribute="trailing" secondItem="rvw-C1-vLw" secondAttribute="trailing" constant="332" id="rNw-dz-QpR"/>
@@ -2797,6 +2809,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="assetChartView" destination="Byi-Km-UtG" id="L5O-r1-vM0"/>
                         <outlet property="assetPriceLabel" destination="Qdq-wu-O4U" id="9E2-g1-nzP"/>
                         <outlet property="navigationBar" destination="8s9-mZ-8wK" id="HKQ-9e-OUT"/>
                         <outlet property="newsTableView" destination="2M4-o0-f0p" id="lX6-Zc-gVt"/>
