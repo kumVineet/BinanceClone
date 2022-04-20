@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import FirebaseDatabase
 
 struct AccountCellModel {
@@ -16,7 +17,7 @@ struct AccountCellModel {
 
 
 class AccountViewController: UIViewController {
-
+    
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,15 +30,14 @@ class AccountViewController: UIViewController {
         super.viewDidLoad()
         
         
-//        ref.child("UserData").observeSingleEvent(of: .value) { snapshot in
-//
-//            print(snapshot.value!)
-//            guard let value = snapshot.value as? [String:Any] else {
-//                return
-//            }
-//
-//            print(value)
-//        }
+        ref.observeSingleEvent(of: .value) { snapshot in
+            
+            if !snapshot.exists() { return }
+            
+            if let email = (snapshot as AnyObject)["email"] as? String {
+                print("==>>1",email)
+            }
+        }
         
         configureModels()
     }
@@ -81,7 +81,7 @@ class AccountViewController: UIViewController {
         
         data.append(section)
     }
-
+    
     private func didTapLogout() {
         
         AuthManager.shared.logout { success in
@@ -102,8 +102,10 @@ class AccountViewController: UIViewController {
     private func handleDefault() {
         print("The Default button is pressed.")
     }
-
+    
 }
+
+//MARK: - Extensions
 
 extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     

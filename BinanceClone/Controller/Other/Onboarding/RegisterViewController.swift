@@ -38,10 +38,6 @@ class RegisterViewController: UIViewController {
         expandButton.isSelected = !expandButton.isSelected
     }
     
-    @IBAction func goToLogin(_ sender: UIBarButtonItem) {
-        
-        
-    }
     
     @IBAction func checkBox(_ sender: UIButton) {
         
@@ -67,11 +63,11 @@ class RegisterViewController: UIViewController {
             
             if registered {
                 print("Registered...")
+                self.dismiss(animated: true, completion: nil)
             }else {
                 print("User ID is already registered...")
             }
         }
-        self.dismiss(animated: true, completion: nil)
     }
     
     

@@ -10,9 +10,8 @@ import FirebaseAuth
 
 
 class MarketViewController: UIViewController {
-    
-    private var viewModels = [MarketTableViewCellViewModel]()
-//    public var viewModels = [CoinModel.CryptoAsset]()
+
+    public var viewModels = [CoinModel.Cryptos]()
     
     @IBOutlet weak var bannerView: UIImageView!
     @IBOutlet weak var marketTableView: UITableView!
@@ -32,13 +31,74 @@ class MarketViewController: UIViewController {
         
         self.showSpinner()
         
- //       CoinApi.shared.performRequest(assetId: "")
- 
 
+    }
+    
+    @IBAction func goToSearch(_ sender: UIBarButtonItem) {
+
+        performSegue(withIdentifier: "searchPage", sender: self)
+    }
+
+    @IBAction func goToAccount(_ sender: UIBarButtonItem) {
+
+        performSegue(withIdentifier: "accountPage", sender: self)
+    }
+    
+    @IBAction func cryptoByMarketCap(_ sender: UIButton) {
+        
+        cryptoMarketCap()
+    }
+    
+    @IBAction func allCryptos(_ sender: UIButton) {
+        
+        allCryptoMarket()
+    }
+    
+    @IBAction func performingCryptos(_ sender: UIButton) {
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
+        cryptoMarketCap()
+
+    }
+    
+    public func cryptoMarketCap() {
+        
+        CoinAPI.shared.cryptosAssets { result in
+            switch result {
+            case .success(let models):
+                
+                self.viewModels = models.compactMap({ crypto in
+                    
+                    let price = crypto.current_price
+                    let formatter = MarketViewController.numberFormat
+                    let priceString = formatter.string(from: NSNumber(value: price))
+                    
+                    return CoinModel.Cryptos(symbol: crypto.symbol.uppercased(),
+                                      name: crypto.name,
+                                      current_price: priceString!,
+                                      imageURL: URL(string: crypto.image)!,
+                                      high_24: crypto.high_24h,
+                                      low_24h: crypto.low_24h,
+                                             price_change_1h: crypto.price_change_percentage_1h_in_currency ?? 1.00,
+                                      price_change_24h: crypto.price_change_percentage_24h)
+                })
+                
+                DispatchQueue.main.async {
+                    self.marketTableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    public func allCryptoMarket() {
+ /*
+        CoinAPI.shared.getIcons()
+
         CoinAPI.shared.cryptoAssets(assetId: "") { [weak self] result in
 
             switch result {
@@ -70,30 +130,43 @@ class MarketViewController: UIViewController {
                 print(error)
             }
         }
-
+*/
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if segue.identifier == "cryptoDetail" {
+            
         let detail = segue.destination as! CryptoDetailsViewController
         let selectedRow = marketTableView.indexPathForSelectedRow!.row
         
         detail.assetName = viewModels[selectedRow].name
+        detail.assetSymbol = viewModels[selectedRow].symbol
         detail.iconData = viewModels[selectedRow].iconData
-        detail.price = viewModels[selectedRow].price
+        detail.price = viewModels[selectedRow].current_price
+        detail.hrChangePercent = viewModels[selectedRow].rateChange1h
+        detail.dayChangePercent = viewModels[selectedRow].rateChange24h
+        detail.dayHighPrice = viewModels[selectedRow].highPrice1D
+            
+        }else if segue.identifier == "searchPage" {
+            
+            if let controller = segue.destination as? SearchViewController {
+            present(controller, animated: true, completion: nil)
+                
+            }
+        }else if segue.identifier == "accountPage" {
+            
+            if let controller = segue.destination as? AccountViewController {
+                present(controller, animated: true, completion: nil)
+                
+                }
+        }
     }
     
-    @IBAction func onlyCrypto(_ sender: UIButton) {
-        
-        
-    }
-    
-    @IBAction func hotAssets(_ sender: UIButton) {
-        
-
-    }
     
 }
+
+//MARK: - TableView Delegate & DataSource
 
 extension MarketViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -109,8 +182,7 @@ extension MarketViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = marketTableView.dequeueReusableCell(withIdentifier: "marketCell", for: indexPath) as! MarketTableViewCell
 
-            cell.changePercent.text = "+4.60%"
-            cell.configure(with: viewModels[indexPath.row])
+        cell.configure(with: viewModels[indexPath.row])
         
         self.removeSpinner()
         return cell

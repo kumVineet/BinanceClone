@@ -8,13 +8,16 @@
 import UIKit
 
 class SellViewController: UIViewController {
-
+    
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var viewOfImage: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var assetLabel: UILabel!
     @IBOutlet weak var assetPrice: UILabel!
     @IBOutlet weak var amount: UILabel!
+    @IBOutlet weak var amountView: UIView!
+    @IBOutlet weak var descLabel: UILabel!
+    
     
     let currencyArray = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"]
     
@@ -22,12 +25,17 @@ class SellViewController: UIViewController {
     var assetID : String = "BTC"
     var price   : String = ""
     var string : String = ""
-    
+    var desc : String = ""
+    var total : Double = 0
     var coinAPI = CoinAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        amountView.layer.borderWidth = 3
+        amountView.layer.borderColor = UIColor.yellow.cgColor
+        amountView.layer.cornerRadius = 10
+        
         viewOfImage.backgroundColor = .yellow
         viewOfImage.layer.masksToBounds = true
         viewOfImage.layer.cornerRadius = viewOfImage.bounds.width / 2
@@ -50,61 +58,75 @@ class SellViewController: UIViewController {
     
     
     @IBAction func sellCrypto(_ sender: UIButton) {
+        
     }
     
     @IBAction func numpadInput(_ sender: UIButton) {
         
-        if(sender.tag == 1) {
-            string += "1"
-        }
-        if(sender.tag == 2) {
-            string += "2"
-        }
-        if(sender.tag == 3) {
-            string += "3"
-        }
-        if(sender.tag == 4) {
-            string += "4"
-        }
-        if(sender.tag == 5) {
-            string += "5"
-        }
-        if(sender.tag == 6) {
-            string += "6"
-        }
-        if(sender.tag == 7) {
-            string += "7"
-        }
-        if(sender.tag == 8) {
-            string += "8"
-        }
-        if(sender.tag == 9) {
-            string += "9"
-        }
-        if(sender.tag == 0) {
-            string += "0"
-        }
-        if(sender.tag == 11) {
-            let charset = CharacterSet(charactersIn: ".")
-            if let _ = string.rangeOfCharacter(from: charset, options: .caseInsensitive) {
-                string += ""
-            } else {
-                string += "."
-             }
+        if string.count <= 7 {
             
+            if(sender.tag == 1) {
+                string += "1"
+            }
+            if(sender.tag == 2) {
+                string += "2"
+            }
+            if(sender.tag == 3) {
+                string += "3"
+            }
+            if(sender.tag == 4) {
+                string += "4"
+            }
+            if(sender.tag == 5) {
+                string += "5"
+            }
+            if(sender.tag == 6) {
+                string += "6"
+            }
+            if(sender.tag == 7) {
+                string += "7"
+            }
+            if(sender.tag == 8) {
+                string += "8"
+            }
+            if(sender.tag == 9) {
+                string += "9"
+            }
+            if(sender.tag == 0) {
+                string += "0"
+            }
+            if(sender.tag == 11) {
+                let charset = CharacterSet(charactersIn: ".")
+                if let _ = string.rangeOfCharacter(from: charset, options: .caseInsensitive) {
+                    string += ""
+                } else {
+                    string += "."
+                }
+            }
         }
         amount.text = string
+        totalAsset(inputAmount: Double(price)!, assetPrice: Double(string) ?? 0.0)
     }
     
     @IBAction func backspace(_ sender: UIButton) {
         
-        let delete = string.popLast()
-         amount.text = string
-         print(delete!)
+        _ = string.popLast()
+        amount.text = string
+        totalAsset(inputAmount: Double(price)!, assetPrice: Double(string) ?? 0.0)
     }
     
     @IBAction func goToBuy(_ sender: Any) {
         dismiss(animated: false, completion: nil)
+    }
+    
+    func totalAsset(inputAmount: Double, assetPrice: Double) {
+        
+        total = assetPrice/inputAmount
+        var number : String {
+            return String(format: "%.5f", total)
+        }
+        desc = "Total \(assetID) : \(number)"
+        descLabel.text = desc
     }
     
 }
@@ -114,14 +136,14 @@ class SellViewController: UIViewController {
 extension SellViewController : CoinApiDelegate{
     
     func currencyPrice(_ coinManager: CoinAPI, coinPrice: CoinModel.CryptoToCurrency) {
-
-        print("++>>===>>>", coinPrice.rate)
+        
         DispatchQueue.main.async{
-
+            
             self.assetPrice.text = coinPrice.rateString
+            self.totalAsset(inputAmount: Double(self.price)!, assetPrice: Double(self.string) ?? 0.0)
         }
     }
-
+    
     func didFailWithError(error: Error) {
         print(error)
     }
@@ -130,24 +152,24 @@ extension SellViewController : CoinApiDelegate{
 //MARK: - UIPickerViewDataSource, UIPickerViewDelegate
 
 extension SellViewController : UIPickerViewDataSource, UIPickerViewDelegate {
-
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return currencyArray.count
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return currencyArray[row]
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
+        
         let selectedCurrency = currencyArray[row]
         currencyLabel.text = selectedCurrency
         CoinAPI.shared.getCoinPrice(for: assetID, currency: selectedCurrency, delegate: self)
     }
-
+    
 }
