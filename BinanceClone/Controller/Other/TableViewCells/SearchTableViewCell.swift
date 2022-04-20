@@ -1,21 +1,20 @@
 //
-//  MarketTableViewCell.swift
+//  SearchTableViewCell.swift
 //  BinanceClone
 //
-//  Created by Vineet Kumar on 25/02/22.
+//  Created by Raksha. on 08/04/22.
 //
 
 import UIKit
 
-class MarketTableViewCell: UITableViewCell {
+class SearchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var viewOfImage: UIView!
     @IBOutlet weak var coinImageView: UIImageView!
     @IBOutlet weak var shortLabel: UILabel!
     @IBOutlet weak var longLabel: UILabel!
     @IBOutlet weak var currentPrice: UILabel!
-    @IBOutlet weak var changePercent: UILabel!
-    
+    @IBOutlet weak var percentChange: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +26,6 @@ class MarketTableViewCell: UITableViewCell {
         
         coinImageView.layer.masksToBounds = true
         coinImageView.layer.cornerRadius = coinImageView.bounds.width / 2
-        
     }
     
     override func prepareForReuse() {
@@ -36,7 +34,6 @@ class MarketTableViewCell: UITableViewCell {
         coinImageView.image = UIImage(named: "diamond.png")
         shortLabel.text = nil
         longLabel.text = nil
-        currentPrice.text = nil
     }
     
     func checkPercent(value: String) -> Bool {
@@ -49,24 +46,24 @@ class MarketTableViewCell: UITableViewCell {
         }
     }
     
-    func configure(with viewModel: CoinModel.Cryptos) {
+    func configure(with viewModel: CoinModel.Cryptos ) {
         
         longLabel.text = viewModel.name
         shortLabel.text = viewModel.symbol
         currentPrice.text = viewModel.current_price
+        percentChange.text = viewModel.rateChange1h
         
-        changePercent.text = viewModel.rateChange1h
         if checkPercent(value: viewModel.rateChange1h) {
-            changePercent.textColor = .red
+            percentChange.textColor = .red
         }else {
-            changePercent.textColor = .green
+            percentChange.textColor = .green
         }
         
         // Image
         if let data  = viewModel.iconData{
             coinImageView.image = UIImage(data: data)
         }
-        else if let url = viewModel.imageURL{
+        else if let url = viewModel.imageURL {
             let task = URLSession.shared.dataTask(with: url) { data, _, error in
                 
                 if let data = data {
@@ -78,7 +75,6 @@ class MarketTableViewCell: UITableViewCell {
             }
             task.resume()
         }
-        
     }
     
     
@@ -87,7 +83,5 @@ class MarketTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
-    
     
 }

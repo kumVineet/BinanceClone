@@ -8,7 +8,7 @@
 import UIKit
 
 class NewsTableViewCell: UITableViewCell {
-
+    
     
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var newsTitle: UILabel!
@@ -39,20 +39,19 @@ class NewsTableViewCell: UITableViewCell {
                 guard let data = data, error == nil else {
                     return
                 }
-//                viewModel.imageData = data
                 DispatchQueue.main.async {
                     self?.newsImage.image = UIImage(data: data)
                 }
             }.resume()
         }
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
     
-
+    
 }

@@ -36,13 +36,3 @@ extension UIViewController {
     }
 }
 
-//extension NumberFormatter {
-//    func numberFormat() -> Double {
-//    let formatter = NumberFormatter()
-//    formatter.locale = .current
-//    formatter.allowsFloats = true
-//    formatter.formatterBehavior = .default
-//    formatter.numberStyle = .currency
-//    return formatter
-//    }
-//}

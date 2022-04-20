@@ -8,13 +8,12 @@
 import UIKit
 
 class TradeViewController: UIViewController {
-
+    
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var topCryptoTableView: UITableView!
     
     private var viewModels = [MarketTableViewCellViewModel]()
-//    public var viewModels = [CoinModel.CryptoAsset]()
     
     static let numberFormat : NumberFormatter = {
         let formatter = NumberFormatter()
@@ -31,42 +30,45 @@ class TradeViewController: UIViewController {
         navigationItem.title = "Choose Crypto"
         
         self.showSpinner()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
-        CoinAPI.shared.cryptoAssets(assetId: "") { [weak self] result in
-             
-             switch result {
-             case .success(let models):
-
-                 self?.viewModels = models.compactMap({ crypto in
-
-                     let price = crypto.price_usd ?? 0
-                     let formatter = MarketViewController.numberFormat
-                     let priceString = formatter.string(from: NSNumber(value: price))
-
-                     let iconUrl = URL(string: CoinAPI.shared.icons.filter { icon in
-                         icon.asset_id == crypto.asset_id
-                     }.first?.url ?? "")
-
-                     return MarketTableViewCellViewModel(name: crypto.name ?? " ",
-                                                         symbol: crypto.asset_id ,
-                                                         price: priceString ?? "$ 1.00",
-                                                         iconUrl: iconUrl,
-                                                         typeIsCrypto: crypto.type_is_crypto
-                                                         )
-                 })
-                 
-                 DispatchQueue.main.async {
-                     self?.topCryptoTableView.reloadData()
-                 }
-             case .failure(let error):
-                 print(error)
-             }
-         }
+        CoinAPI.shared.getIcons()
+        
+        CoinAPI.shared.tradeAssets(assetId: "") { [weak self] result in
+            
+            switch result {
+            case .success(let models):
+                
+                self?.viewModels = models.compactMap({ crypto in
+                    
+                    let price = crypto.price_usd ?? 0
+                    let formatter = MarketViewController.numberFormat
+                    let priceString = formatter.string(from: NSNumber(value: price))
+                    
+                    let iconUrl = URL(string: CoinAPI.shared.icons.filter { icon in
+                        icon.asset_id == crypto.asset_id
+                    }.first?.url ?? "")
+                    
+                    return MarketTableViewCellViewModel(name: crypto.name ?? " ",
+                                                        symbol: crypto.asset_id ,
+                                                        price: priceString ?? "$ 1.00",
+                                                        iconUrl: iconUrl,
+                                                        typeIsCrypto: crypto.type_is_crypto
+                    )
+                })
+                
+                DispatchQueue.main.async {
+                    self?.topCryptoTableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -77,8 +79,11 @@ class TradeViewController: UIViewController {
         buy.iconUrl = viewModels[selectedRow].iconData!
         buy.price = viewModels[selectedRow].price
     }
-
+    
 }
+
+//MARK: - Extentions
+
 
 extension TradeViewController : UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
@@ -110,28 +115,28 @@ extension TradeViewController : UITableViewDelegate, UITableViewDataSource, UISe
             return
         }
         
-        CoinAPI.shared.cryptoAssets(assetId: text) { [weak self] result in
+        CoinAPI.shared.tradeAssets(assetId: text) { [weak self] result in
             
             
             switch result {
             case .success(let models):
-
+                
                 self?.viewModels = models.compactMap({ crypto in
-
+                    
                     let price = crypto.price_usd ?? 0
                     let formatter = MarketViewController.numberFormat
                     let priceString = formatter.string(from: NSNumber(value: price))
-
+                    
                     let iconUrl = URL(string: CoinAPI.shared.icons.filter { icon in
                         icon.asset_id == crypto.asset_id
                     }.first?.url ?? "")
-
+                    
                     return MarketTableViewCellViewModel(name: crypto.name ?? " ",
                                                         symbol: crypto.asset_id ,
                                                         price: priceString ?? "$ 1.00",
                                                         iconUrl: iconUrl,
                                                         typeIsCrypto: crypto.type_is_crypto
-                                                        )
+                    )
                 })
                 
                 DispatchQueue.main.async {

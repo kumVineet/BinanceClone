@@ -8,7 +8,7 @@
 import UIKit
 
 class TopSearchTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var coinImageView: UIImageView!
     @IBOutlet weak var viewOfImage: UIView!
     @IBOutlet weak var shortName: UILabel!
@@ -25,10 +25,10 @@ class TopSearchTableViewCell: UITableViewCell {
         coinImageView.layer.masksToBounds = true
         coinImageView.layer.cornerRadius = coinImageView.bounds.width / 2
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -39,8 +39,8 @@ class TopSearchTableViewCell: UITableViewCell {
         shortName.text = nil
         longName.text = nil
     }
-
-    func configure(with viewModel: MarketTableViewCellViewModel /*CoinModel.CryptoAsset*/) {
+    
+    func configure(with viewModel: MarketTableViewCellViewModel ) {
         
         longName.text = viewModel.name
         shortName.text = viewModel.symbol
@@ -59,7 +59,7 @@ class TopSearchTableViewCell: UITableViewCell {
             }
             task.resume()
         }
-  
+        
     }
     
 }
